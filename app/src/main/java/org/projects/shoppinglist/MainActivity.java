@@ -88,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    public void onClickClearItems(View v) {
+        bag.clear();
+        adapter.notifyDataSetChanged();
+    }
+
     @Override
     public void onSaveInstanceState (Bundle savedInstanceState) {
         savedInstanceState.putStringArrayList("bag", bag);
