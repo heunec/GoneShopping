@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
-    ArrayAdapter<String> adapter;
+    ArrayAdapter<Product> adapter;
     ListView listView;
-    ArrayList<String> bag = new ArrayList<String>();
+    ArrayList<Product> bag = new ArrayList<Product>();
 
     public ArrayAdapter getMyAdapter()
     {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState!=null) {
 
-            bag = savedInstanceState.getStringArrayList("bag");
+            bag = savedInstanceState.getParcelableArrayList("Product");
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
         //here we create a new adapter linking the bag and the
         //listview
-        adapter =  new ArrayAdapter<String>(this,
+        adapter =  new ArrayAdapter<Product>(this,
                 android.R.layout.simple_list_item_checked,bag );
 
         //setting the adapter on the listview
@@ -62,7 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 String szoveg = anyad.getText().toString();
                 EditText apad = (EditText)findViewById(R.id.addquantity);
                 String darab = apad.getText().toString();
-                bag.add(szoveg + " " + darab);
+                int tasak = Integer.parseInt(darab);
+
+                bag.add(new Product(tasak, szoveg));
+
                 anyad.setText("");
                 apad.setText("");
 
@@ -99,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState (Bundle savedInstanceState) {
-        savedInstanceState.putStringArrayList("bag", bag);
+        //savedInstanceState.putStringArrayList("bag", bag);
+        savedInstanceState.putParcelableArrayList("bag", bag);
     }
 
     @Override
