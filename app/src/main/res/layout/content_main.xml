@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -23,11 +26,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    
+
+        <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
+to prevent the dummy from receiving focus again -->
     <EditText
         android:id="@+id/addItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:nextFocusUp="@id/addItem"
+        android:nextFocusLeft="@id/addItem"
         android:inputType="text"
         android:hint="What do you want to add?"
         android:layout_gravity="center_horizontal" />

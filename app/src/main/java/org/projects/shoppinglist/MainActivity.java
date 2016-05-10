@@ -63,14 +63,18 @@ public class MainActivity extends AppCompatActivity {
                 EditText apad = (EditText)findViewById(R.id.addquantity);
                 String darab = apad.getText().toString();
                 bag.add(szoveg + " " + darab);
+                anyad.setText("");
+                apad.setText("");
 
                 //The next line is needed in order to say to the ListView
                 //that the data has changed - we have added stuff now!
                 getMyAdapter().notifyDataSetChanged();
 
+
             }
         });
     }
+
 
 
     public void onClickDelItem(View v) {
