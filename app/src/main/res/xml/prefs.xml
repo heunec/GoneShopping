@@ -23,6 +23,12 @@
 
     <PreferenceCategory android:title="Personal settings">
 
+        <ListPreference
+            android:entries="@array/colorName"
+            android:entryValues="@array/colorCode"
+            android:key="color"
+            android:summary="Choose your color"
+            android:title="Background Color" />
 
     </PreferenceCategory>
 
