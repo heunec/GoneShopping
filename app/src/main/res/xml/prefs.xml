@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="General info">
+
+    <EditTextPreference
+        android:key="name"
+        android:summary="Your full name"
+        android:title="Name" />
+
+    <EditTextPreference
+        android:key="email"
+        android:summary="Your email address"
+        android:title="Email" />
+
+    <ListPreference
+        android:entries="@array/gender_type"
+        android:entryValues="@array/gender_values"
+        android:key="gender"
+        android:summary="Choose your gender"
+        android:title="Gender" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Personal settings">
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -25,33 +25,37 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
         <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
 to prevent the dummy from receiving focus again -->
     <EditText
         android:id="@+id/addItem"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="3"
         android:nextFocusUp="@id/addItem"
         android:nextFocusLeft="@id/addItem"
         android:inputType="text"
         android:hint="What do you want to add?"
         android:layout_gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/addquantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="number"
+        android:hint="nr"
+        android:layout_gravity="center_horizontal" />
 
-        <EditText
-            android:id="@+id/addquantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="pcs"
-            android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:id="@+id/addButton"
-        android:text="Add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:entries="@array/chooseAmount" />
 
 
     </LinearLayout>
@@ -61,18 +65,24 @@ to prevent the dummy from receiving focus again -->
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/addButton"
+            android:text="Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
             android:id="@+id/delete"
             android:text="Delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickDelItem"/>
 
-        <Button
+        <!--<Button
             android:id="@+id/clear"
             android:text="Clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClickClearItems"/>
+            android:onClick="showDialog"/>-->
 
     </LinearLayout>
 
